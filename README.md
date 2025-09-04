@@ -114,11 +114,6 @@ Using OpenCV, we created a simple canvas. The process was iterative:
 - PyTorch
 - OpenCV
 - NumPy
-## Authors & Acknowledgments
-
-Built by: 
-
-This project was completed as part of the Advanced Machine Learning (EE 525) course at Indian Institute of Technology Guwahati (IITG).
 
 ## Citation
 
