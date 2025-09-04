@@ -5,11 +5,42 @@ This project is our implementation of the interactive image generation technique
 **“Generative Visual Manipulation on the Natural Image Manifold”** by Jun-Yan Zhu, Philipp Krähenbühl, Eli Shechtman, and Alexei A. Efros (ECCV, 2016).
 
 While the original work provided the core idea, our journey involved building this system from the ground up using PyTorch and OpenCV, training on specific datasets, and tackling the unique challenges of real-time user interaction.
-## Demo
+## Interactive UI
+<p align="center">
+  <img src="https://github.com/ShashwatiBuragohain/Generative-Visual-Manipulation-on-the-Natural-Image-Manifold/blob/ebd077adaf6914050d3048ad49397d9201a2548e/images/Interactive%20UI.png?raw=true" width="60%" />
+</p>
 
-![Our interactive OpenCV interface. Draw on the left, generate a realistic image on the right in real-time.](https://images/demo_ui.png)  
-*Our interactive OpenCV interface. Draw on the left, generate a realistic image on the right in real-time.*
 
+*This is our interactive OpenCV interface. Here, after uploading the image we scribble on it using the color brush and then the edited image gets displayed after applying the gan edit option as shown below*
+
+<p align="center">
+  <img src="https://github.com/ShashwatiBuragohain/Generative-Visual-Manipulation-on-the-Natural-Image-Manifold/blob/ebd077adaf6914050d3048ad49397d9201a2548e/images/scribble1.jpg?raw=true" width="25%" />
+  <img src="https://github.com/ShashwatiBuragohain/Generative-Visual-Manipulation-on-the-Natural-Image-Manifold/blob/ebd077adaf6914050d3048ad49397d9201a2548e/images/scribble2.jpg?raw=true" width="25%" />
+</p>
+
+<p align="center">
+  <b>Left:</b> Input UI (scribbled image) &nbsp;&nbsp;&nbsp; <b>Right:</b> Generated Image
+</p>
+
+## Guided Manipulation
+
+This process is the heart of "Generative Visual Manipulation on the Natural Image Manifold." We took a generated shoe and modified its edge map to give it a higher top, altering its fundamental structure.
+
+We started with a generated image and its corresponding edge map.
+
+- Using our interactive canvas, we directly edited the edge map, extending the lines to sketch a new, higher shoe profile.
+
+- This new, "out-of-distribution" edge map was then projected onto the learned manifold using our optimization procedure (minimizing L1 and TV loss).
+
+- The generator took this optimized, plausible edge map and produced a new, coherent image that closely followed the user's structural edit.
+
+The result, as shown below, demonstrates this approach. The system successfully incorporates the user's guidance—a higher top—while generating photorealistic textures and details that are consistent with the new structure.
+
+<p align="center">
+  <img src="https://github.com/ShashwatiBuragohain/Generative-Visual-Manipulation-on-the-Natural-Image-Manifold/blob/ebd077adaf6914050d3048ad49397d9201a2548e/images/style%20transfer.jpg?raw=true" width="50%" />
+</p>
+
+Direct Manipulation via Edge Editing: The input edge map (left) was modified by a user. Our system projected this edit onto the natural image manifold and generated a new, coherent image (right) that incorporates the change while maintaining realism.
 
 ## DATASET:
 
