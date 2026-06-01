@@ -129,7 +129,7 @@ Using OpenCV, we created a simple canvas. The process was iterative:
 ## Authors & Acknowledgments
 
 Built by: 
-[Shashwati Buragohain] & [Swagata Buragohain]  
+[Shashwati Buragohain] & [@SwagataBuragohain]  
 This project was completed as part of the Advanced Machine Learning (EE 525) course at Indian Institute of Technology Guwahati (IITG).
 
 We extend our gratitude to the authors of the original paper for their inspiring work.
